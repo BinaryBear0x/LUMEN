@@ -39,6 +39,10 @@ Hava durumu, harita ve deprem verileri internet kullanır. BLE ışık kontrolü
 
 İlk Windows BLE keşfi uzun sürebilir. Cihaz önbellekte değilse bağlantı yaklaşık 30 saniye alabilir. Hedef ampul tek kontrol bağlantısına izin verebilir; Windows bağlandığında telefon Hue uygulamasının bağlantısı kesilebilir. Pencereyi kapatmak uygulamayı tepsiye küçültür. Alarm ve otomasyonlar için bilgisayarın açık, LUMEN'in çalışıyor olması gerekir.
 
+## İndirme
+
+En güncel, kendi çalışma zamanını içeren Windows x64 uygulamasını [GitHub Releases sayfasından](https://github.com/BinaryBear0x/LUMEN/releases/latest) indirin ve `HuePC.App.exe` dosyasını çalıştırın. Ayrı bir .NET kurulumu gerekmez.
+
 ## Kaynaktan çalıştırma
 
 .NET 10 SDK ve Windows 11 gerekir.

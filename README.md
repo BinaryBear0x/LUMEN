@@ -39,6 +39,10 @@ Weather, map, and earthquake data require internet access. BLE bulb control is l
 
 The first Windows BLE discovery can take a while. If the device is not cached, connecting may take about 30 seconds. The target bulb may allow only one control connection; connecting from Windows can disconnect the phone's Hue app. Closing the window minimizes LUMEN to the system tray. The PC must be on and LUMEN running for alarms and automations to work.
 
+## Download
+
+Download the latest self-contained Windows x64 executable from the [GitHub Releases page](https://github.com/BinaryBear0x/LUMEN/releases/latest) and run `HuePC.App.exe`. The release does not require a separate .NET runtime installation.
+
 ## Run from source
 
 .NET 10 SDK and Windows 11 are required.
