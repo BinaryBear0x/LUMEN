@@ -1,0 +1,74 @@
+name: Hata bildirimi
+description: Yeniden üretilebilir bir sorun bildirin.
+title: "[Hata]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Göndermeden önce günlük ve ekran görüntülerindeki Bluetooth/Zigbee adreslerini, kullanıcı adlarını ve kişisel bilgileri silin.
+  - type: textarea
+    id: summary
+    attributes:
+      label: Sorun
+      description: Ne oldu? Kısa ve açık biçimde anlatın.
+      placeholder: Ampulü seçtikten sonra bağlantı kurulmadan zaman aşımına uğruyor.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Yeniden üretme adımları
+      description: Sorunu yeniden oluşturmak için gereken adımları sıralayın.
+      placeholder: |
+        1. Uygulamayı aç...
+        2. Ampul ara'yı seç...
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Beklenen ve gerçekleşen sonuç
+      description: Ne olmasını bekliyordunuz, gerçekte ne oldu?
+    validations:
+      required: true
+  - type: input
+    id: app-version
+    attributes:
+      label: LUMEN sürümü
+      description: Sürüm numarası veya kullandığınız commit.
+      placeholder: v1.0.0 veya commit SHA
+    validations:
+      required: false
+  - type: input
+    id: windows
+    attributes:
+      label: Windows sürümü
+      description: Windows 11 sürüm/build numarası.
+      placeholder: Windows 11 24H2, build 26100
+    validations:
+      required: true
+  - type: input
+    id: bluetooth-adapter
+    attributes:
+      label: Bluetooth adaptörü
+      description: Biliniyorsa üretici/model ve sürücü sürümü.
+    validations:
+      required: false
+  - type: input
+    id: bulb
+    attributes:
+      label: Ampul modeli ve firmware
+      description: BLE/protokol sorunlarında özellikle yararlıdır.
+      placeholder: LCA016, firmware 1.126.9
+    validations:
+      required: false
+  - type: textarea
+    id: logs
+    attributes:
+      label: Temizlenmiş günlük veya ek bilgi
+      description: Hassas alanları sildiğinizden emin olduktan sonra ilgili hata mesajını ekleyin.
+    validations:
+      required: false

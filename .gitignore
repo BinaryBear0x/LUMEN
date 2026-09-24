@@ -1,0 +1,13 @@
+**/bin/
+**/obj/
+artifacts/
+/docs/
+HuePC-win-x64.zip
+.nuget-profile/
+.vs/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+.DS_Store

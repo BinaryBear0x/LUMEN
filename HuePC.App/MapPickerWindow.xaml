@@ -1,0 +1,36 @@
+<ui:FluentWindow x:Class="HuePC.App.MapPickerWindow"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+                 xmlns:controls="clr-namespace:HuePC.App.Controls"
+                 Title="Konum seç" Width="800" Height="600" WindowStartupLocation="CenterOwner"
+                 ExtendsContentIntoTitleBar="True" WindowBackdropType="Mica" WindowCornerPreference="Round"
+                 FontFamily="Segoe UI Variable Text, Segoe UI" FontSize="13"
+                 UseLayoutRounding="True" SnapsToDevicePixels="True" TextOptions.TextFormattingMode="Display">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <ui:TitleBar Grid.Row="0" Title="Konum seç" ShowMinimize="False" ShowMaximize="False" ShowClose="True" />
+
+        <Border Grid.Row="1" Margin="14,4,14,0" CornerRadius="10" ClipToBounds="True"
+                BorderBrush="{DynamicResource ControlStrokeColorDefaultBrush}" BorderThickness="1">
+            <controls:TileMap x:Name="Map" />
+        </Border>
+
+        <Grid Grid.Row="2" Margin="14,12,14,14">
+            <StackPanel>
+                <TextBlock x:Name="Readout" FontSize="12" Foreground="{DynamicResource TextFillColorSecondaryBrush}" />
+                <TextBlock Text="Haritayı sürükleyerek gezinin, tekerlekle yakınlaştırın, tıklayarak konumu işaretleyin."
+                           FontSize="12" Margin="0,3,0,0" Foreground="{DynamicResource TextFillColorTertiaryBrush}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                <ui:Button Appearance="Secondary" Content="İptal" Click="OnCancelClick" />
+                <ui:Button Appearance="Primary" Margin="8,0,0,0" Content="Bu konumu kullan" Click="OnConfirmClick" />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</ui:FluentWindow>

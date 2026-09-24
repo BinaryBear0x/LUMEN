@@ -1,0 +1,44 @@
+name: Publish Windows release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  windows-x64:
+    runs-on: windows-latest
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Restore Windows x64 runtime
+        run: dotnet restore HuePC.App\HuePC.App.csproj --runtime win-x64
+
+      - name: Publish self-contained app
+        run: >-
+          dotnet publish HuePC.App\HuePC.App.csproj
+          --configuration Release
+          --runtime win-x64
+          --self-contained true
+          --no-restore
+          --output artifacts\release\win-x64
+          -p:DebugType=None
+          -p:DebugSymbols=false
+
+      - name: Create release archive
+        run: Compress-Archive -Path artifacts\release\win-x64\* -DestinationPath HuePC-win-x64.zip -CompressionLevel Optimal
+
+      - name: Attach archive to GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create $env:GITHUB_REF_NAME HuePC-win-x64.zip --generate-notes

@@ -1,0 +1,50 @@
+name: Özellik önerisi
+description: Yeni bir özellik veya iyileştirme önerin.
+title: "[Öneri]: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Çözülecek ihtiyaç
+      description: Hangi kullanım senaryosu şu anda zor veya mümkün değil?
+      placeholder: Bilgisayar başında çalışırken...
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Önerdiğiniz çözüm
+      description: Nasıl çalışmasını istediğinizi anlatın.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatifler
+      description: Denediğiniz veya düşündüğünüz başka yollar varsa yazın.
+    validations:
+      required: false
+  - type: dropdown
+    id: area
+    attributes:
+      label: İlgili alan
+      options:
+        - Ampul ve BLE kontrolü
+        - Işık efektleri ve profiller
+        - Müzik ve ortam ışığı
+        - Zamanlayıcı ve otomasyon
+        - Bildirimler
+        - Arayüz ve erişilebilirlik
+        - Geliştirici araçları veya dokümantasyon
+        - Diğer
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: Ek bilgi veya görsel
+      description: Eklemek istediğiniz bağlamı paylaşın. Görsellerde kişisel bilgileri gizleyin.
+    validations:
+      required: false
